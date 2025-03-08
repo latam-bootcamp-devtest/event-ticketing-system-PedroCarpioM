@@ -19,6 +19,12 @@ model Event {
   date            String
   // TODO: ⚠️ Fix very wrong parsing
   availableSeats  Int
+  Tickets         Ticket[]
 }
 
-
+model Ticket {
+  ticketId        Int      @id @default(autoincrement())
+  userId          Int
+  eventId         Int     
+  event           Event     @relation(fields: [eventId], references: [eventId])
+}
