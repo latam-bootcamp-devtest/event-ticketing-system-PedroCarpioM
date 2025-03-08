@@ -18,7 +18,11 @@ const example: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
       },
     },
     async function (request, repy) {
-      const params = request.query;
+      type Requestquery = {
+        page: string;
+        pagesize: string;
+      };
+      const params: Requestquery = request.query as Requestquery;
       const pagesize = parseInt(params.pagesize);
       const page = parseInt(params.page);
       return await get_all_events(page, pagesize);
