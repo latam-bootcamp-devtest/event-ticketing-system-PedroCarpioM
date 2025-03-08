@@ -2,7 +2,7 @@
 CREATE TABLE `Event` (
     `eventId` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(191) NOT NULL,
-    `date` VARCHAR(191) NOT NULL,
+    `date` INTEGER NOT NULL,
     `availableSeats` INTEGER NOT NULL,
 
     PRIMARY KEY (`eventId`)
