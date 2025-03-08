@@ -13,7 +13,7 @@ export async function get_all_events(page: number, pagesize: number) {
   const format = {
     currentPage: page,
     pageSize: pagesize,
-    totalPages: Math.floor((await get_size_events()) / pagesize),
+    totalPages: Math.ceil((await get_size_events()) / pagesize),
     events: response,
   };
   return format;
